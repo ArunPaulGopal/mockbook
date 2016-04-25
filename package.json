@@ -1,0 +1,27 @@
+{
+  "name": "mockbook",
+  "version": "1.0.0",
+  "description": "##",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArunPaulGopal/mockbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArunPaulGopal/mockbook/issues"
+  },
+  "homepage": "https://github.com/ArunPaulGopal/mockbook#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongo": "^0.1.0",
+    "mongodb": "^2.1.16",
+    "request": "^2.72.0"
+  }
+}
