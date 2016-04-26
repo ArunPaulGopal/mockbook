@@ -8,7 +8,7 @@ app.config(['$routeProvider', function($routeProvider) {
     controllerAs: 'landing'
   })
   .when('/search', {
-    templateUrl: 'landing/page.html',
+    templateUrl: 'search/search.html',
     controller: 'landingController',
     controllerAs: 'landing'
   })
