@@ -16,7 +16,7 @@ function timeline($http) {
     var timeline = $http.get('http://localhost:8080/read');
     timeline.then(function(timeline){
       console.log(timeline.data);
-      vm.list = timeline.data;
+      vm.list = timeline.data[0];
     })
   }
 

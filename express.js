@@ -16,7 +16,8 @@ app.get('/read', function(req, res, callback) {
       timeline.find().toArray(function(err, docs){
         var myArray =[];
         for (var i=0; i<docs.length; i++) {
-          myArray.push(docs[i].data)
+          console.log(docs)
+          myArray.push(docs)
         }
         db.close();
         console.log(myArray);
