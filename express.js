@@ -8,19 +8,15 @@ var port = process.env.PORT || 8080
 app.use(express.static('./'));
 
 app.get('/read', function(req, res, callback) {
-  console.log("I am being hit");
   MongoClient.connect(url, function(err, db) {
     if (!err){
-      var timeline = db.collection('friends');
-      console.log(timeline);
+      var timeline = db.collection('posts');
       timeline.find().toArray(function(err, docs){
         var myArray =[];
         for (var i=0; i<docs.length; i++) {
-          console.log(docs)
-          myArray.push(docs)
+          myArray.push(docs[i])
         }
         db.close();
-        console.log(myArray);
         res.send(myArray);
       })
     } else {

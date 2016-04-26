@@ -1,6 +1,11 @@
 <div ng-controller="timelineController as timeline">
-  <p ng-repeat="item in timeline.list">
-    {{item.posts}}
-  </p>
-  <p> SOMETHING!!!</p>
+  <div ng-repeat="post in timeline.list" class="media">
+    <div class="media-left">
+        <img class="media-object" src="..." alt="...">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{post.name}}</h4>
+      <p>{{post.content}}</p>
+    </div>
+  </div>
 </div>
