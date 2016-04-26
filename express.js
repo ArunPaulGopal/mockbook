@@ -6,6 +6,7 @@ var jsonParser = require('body-parser').json();
 var port = process.env.PORT || 8080
 
 app.use(express.static('./'));
+app.use(express.static('images'))
 
 app.get('/read', function(req, res, callback) {
   MongoClient.connect(url, function(err, db) {
