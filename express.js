@@ -8,10 +8,29 @@ var port = process.env.PORT || 8080
 app.use(express.static('./'));
 app.use(express.static('images'))
 
-app.get('/read', function(req, res, callback) {
+app.get('/timeline', function(req, res, callback) {
   MongoClient.connect(url, function(err, db) {
     if (!err){
       var timeline = db.collection('posts');
+      timeline.find().toArray(function(err, docs){
+        var myArray =[];
+        for (var i=0; i<docs.length; i++) {
+          myArray.push(docs[i])
+        }
+        db.close();
+        res.send(myArray);
+      })
+    } else {
+      db.close();
+      res.sendStatus(404);
+    }
+  })
+});
+
+app.post('/search', jsonParser function(req, res, callback) {
+  MongoClient.connect(url, function(err, db) {
+    if (!err){
+      var timeline = db.collection('users');
       timeline.find().toArray(function(err, docs){
         var myArray =[];
         for (var i=0; i<docs.length; i++) {

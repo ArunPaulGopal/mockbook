@@ -13,7 +13,7 @@ function timeline($http) {
   activate();
 
   function getTimeline() {
-    var timeline = $http.get('http://localhost:8080/read');
+    var timeline = $http.get('http://localhost:8080/timeline');
     timeline.then(function(timeline){
       vm.list = timeline.data;
     })
