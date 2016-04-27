@@ -9,12 +9,11 @@ function landing($http) {
 
 
   vm.search = function(value) {
-    console.log("Search function running!")
     var toSearch = {};
-    toSearch.content = value.text;
-    var search = $http.post('http://localhost:8080/search');
+    toSearch.content = value;
+    var search = $http.post('http://localhost:8080/search', toSearch);
     search.then(function(friends) {
-      vm.list = friends.data
+      vm.results = friends.data
     })
   }
 
