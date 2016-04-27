@@ -8,7 +8,8 @@ function landing($http) {
   var vm = this;
 
 
-  function searchFriend(value) {
+  vm.search = function(value) {
+    console.log("Search function running!")
     var toSearch = {};
     toSearch.content = value.text;
     var search = $http.post('http://localhost:8080/search');
