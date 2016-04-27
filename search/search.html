@@ -1,0 +1,26 @@
+<div ng-controller="searchController as search">
+  <div class="panel panel-default">
+    <div class="panel-body text-center">
+      <input ng-model="searchvalue" type="text" class="form-control" placeholder="Search for friends!">
+    </div>
+    <div class="panel-body text-center">
+      <button ng-click="search.search(searchvalue)" class="btn btn-default">Search!</button>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading text-center">
+      <h3>Search Results</h3>
+    </div>
+    <div class="panel-body text-center">
+      <div ng-repeat="friend in search.results" class="media">
+        <div class="media-left">
+            <img class="media-object" src="user.jpeg">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{friend.name}}</h4>
+          <p>{{friend.content}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

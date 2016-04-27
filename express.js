@@ -27,11 +27,11 @@ app.get('/timeline', function(req, res, callback) {
   })
 });
 
-app.post('/search', jsonParser function(req, res, callback) {
+app.post('/search', jsonParser, function(req, res, callback) {
   MongoClient.connect(url, function(err, db) {
     if (!err){
-      var timeline = db.collection('users');
-      timeline.find().toArray(function(err, docs){
+      var users = db.collection('users');
+      users.find({"name":req.body.content}).toArray(function(err, docs){
         var myArray =[];
         for (var i=0; i<docs.length; i++) {
           myArray.push(docs[i])
