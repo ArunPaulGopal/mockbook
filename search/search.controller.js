@@ -16,4 +16,13 @@ function search($http) {
       vm.results = friends.data
     })
   }
+
+  vm.add = function(id) {
+    var toAdd = {};
+    toAdd.content = id;
+    var add = $http.post('http://localhost:8080/add', toAdd)
+    add.then(function(added) {
+
+    })
+  }
 }
