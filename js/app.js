@@ -9,7 +9,7 @@ app.config(['$routeProvider', function($routeProvider) {
   })
   .when('/search', {
     templateUrl: 'search/search.html',
-    controller: 'landingController',
-    controllerAs: 'landing'
+    controller: 'searchController',
+    controllerAs: 'search'
   })
 }]);
