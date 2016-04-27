@@ -12,7 +12,6 @@ function search($http) {
     toSearch.content = value;
     var search = $http.post('http://localhost:8080/search', toSearch);
     search.then(function(friends) {
-      console.log(friends.data)
       vm.results = friends.data
     })
   }
@@ -22,7 +21,7 @@ function search($http) {
     toAdd.content = id;
     var add = $http.post('http://localhost:8080/add', toAdd)
     add.then(function(added) {
-
+      
     })
   }
 }
