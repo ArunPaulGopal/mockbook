@@ -11,7 +11,7 @@
     <div class="row text-center">
       <h4>Friends</h4>
       <div ng-repeat="friend in profile.friends" class="col-md-6 col-md-3">
-        <a href="#" class="thumbnail">
+        <a ng-href="#/profileview/?id={{friend.id}}" class="thumbnail">
           <img src={{friend.picture}} alt="...">
         </a>
       </div>
