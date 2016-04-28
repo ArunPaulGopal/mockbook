@@ -6,6 +6,7 @@ app.$inject = ['$http'];
 
 function search($http) {
   var vm = this;
+  var currentSearch = '';
 
   vm.search = function(value) {
     var toSearch = {};
@@ -13,6 +14,8 @@ function search($http) {
     var search = $http.post('http://localhost:8080/search', toSearch);
     search.then(function(friends) {
       vm.results = friends.data
+      currentSearch = '';
+      currentSearch = value;
     })
   }
 
@@ -21,7 +24,18 @@ function search($http) {
     toAdd.content = id;
     var add = $http.post('http://localhost:8080/add', toAdd)
     add.then(function(added) {
-      
+      vm.search(currentSearch);
     })
   }
+
+  vm.remove = function(id) {
+    var toRemove = {};
+    toRemove.content = id;
+    var remove = $http.post('http://localhost:8080/remove', toRemove)
+    remove.then(function(added) {
+      vm.search(currentSearch);
+    })
+  }
+
+
 }

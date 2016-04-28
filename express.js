@@ -62,6 +62,22 @@ app.post('/add', jsonParser, function(req, res, callback) {
   });
 });
 
+app.post('/remove', jsonParser, function(req, res, callback) {
+  MongoClient.connect(url, function(err, db) {
+    if (!err){
+      var users = db.collection('users');
+      users.updateOne(
+        {"id":req.body.content},
+        {$set: {'friend': 'false'}})
+        db.close();
+        res.send("Success");
+    } else {
+      db.close();
+      res.sendStatus(404);
+    }
+  });
+});
+
 app.listen(port,function(){
   console.log("listening on port" + port);
 })
