@@ -17,14 +17,12 @@
             <img class="media-object" src="user.jpeg">
         </div>
         <div class="media-body">
-          {{search.results}}
-          {{friend.friend}}
           <h4 class="media-heading">{{friend.name}}</h4>
           <p>{{friend.content}}</p>
         </div>
         <div class="media-body">
-          <button ng-click="search.add(friend.id)" class="btn btn-default" id={{friend.id}}>Add Friend</button>
-          <button ng-click="search.remove(friend.id)" class="btn btn-default" id={{friend.id}}>Remove Friend</button>
+          <button ng-show="friend.friend === 'false'" ng-click="search.add(friend.id)" class="btn btn-default" id={{friend.id}}>Add</button>
+          <button ng-show="friend.friend === 'true'" ng-click="search.remove(friend.id)" class="btn btn-default" id={{friend.id}}>Remove</button>
         </div>
       </div>
     </div>

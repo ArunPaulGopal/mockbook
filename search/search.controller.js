@@ -22,7 +22,7 @@ function search($http) {
   vm.add = function(id) {
     var toAdd = {};
     toAdd.content = id;
-    var add = $http.post('http://localhost:8080/add', toAdd)
+    var add = $http.post('http://localhost:8080/add', toAdd);
     add.then(function(added) {
       vm.search(currentSearch);
     })
@@ -31,11 +31,9 @@ function search($http) {
   vm.remove = function(id) {
     var toRemove = {};
     toRemove.content = id;
-    var remove = $http.post('http://localhost:8080/remove', toRemove)
+    var remove = $http.post('http://localhost:8080/remove', toRemove);
     remove.then(function(added) {
       vm.search(currentSearch);
     })
   }
-
-
 }
