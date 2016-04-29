@@ -1,1 +1,16 @@
-<p>Search Video Screen</p>
+<div ng-controller="searchvideosController as searchvideos">
+  <div class="panel panel-default">
+    <div class="panel-body text-center">
+      <input ng-model="searchvideosvalue" type="text" class="form-control" placeholder="Search for trending videos!">
+    </div>
+    <div class="panel-body text-center">
+      <button ng-click="searchvideos.search()" class="btn btn-default">Search!</button>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading text-center">
+      <h3>Search Results</h3>
+      {{searchvideos.results}}
+    </div>
+  </div>
+</div>

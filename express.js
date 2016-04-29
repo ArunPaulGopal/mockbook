@@ -8,6 +8,25 @@ var port = process.env.PORT || 8080
 app.use(express.static('./'));
 app.use(express.static('images'))
 
+app.get('/videos', function(req, res, callback) {
+  MongoClient.connect(url, function(err, db) {
+    if (!err){
+      var videos = db.collection('videos');
+      videos.find().toArray(function(err, docs){
+        var myArray =[];
+        for (var i=0; i<docs.length; i++) {
+          myArray.push(docs[i])
+        }
+        db.close();
+        res.send(myArray);
+      })
+    } else {
+      db.close();
+      res.sendStatus(404);
+    }
+  })
+});
+
 app.get('/timeline', function(req, res, callback) {
   MongoClient.connect(url, function(err, db) {
     if (!err){
