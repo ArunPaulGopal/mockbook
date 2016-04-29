@@ -3,8 +3,10 @@
     <img src={{profile.picture}}>
   </div>
   <div class="col-md-4">
+    <button class="btn btn-default">View Pictures</button>
     {{profile}}
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4" ng-repeat="pictures in profile.pictures">
+    {{pictures}}
   </div>
 </div>
