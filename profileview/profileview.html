@@ -3,8 +3,23 @@
     <img src={{profile.picture}}>
   </div>
   <div class="col-md-4">
+    <button class="btn btn-default" data-toggle="modal" data-target="#myModal">View Pictures</button>
     {{profile}}
   </div>
   <div class="col-md-4">
+    {{pictures}}
+  </div>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title text-center" id="myModalLabel">Pictures from {{profile.name}}</h4>
+        </div>
+        <div class="modal-body" ng-repeat="pictures in profile.pictures">
+          <img src={{pictures}}>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
