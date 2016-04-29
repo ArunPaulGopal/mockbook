@@ -1,0 +1,37 @@
+<div ng-controller="searchvideosController as searchvideos">
+  <div class="panel panel-default">
+    <div class="panel-heading text-center">
+      <h3>Trending Videos</h3>
+    </div>
+    <div class="panel-body text-center">
+      <div class="row">
+        <div class="col-sm-6 col-md-4" ng-repeat="video in searchvideos.results">
+          <div class="thumbnail">
+            <img src={{video.img}} class="img-rounded thumbnail">
+            <div class="caption">
+              <p>{{video.description}}</p>
+              <button class="btn btn-default" data-toggle="modal" data-target=#{{video.id}}>Watch Video</button>
+            </div>
+          </div>
+          <div class="modal fade" id={{video.id}} tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Video Player</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-12 embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src={{video.url}}></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
