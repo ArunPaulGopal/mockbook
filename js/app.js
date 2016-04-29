@@ -17,4 +17,9 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: 'profileviewController',
     controllerAs: 'profileview'
   })
+  .when('/searchvideos/', {
+    templateUrl: 'searchvideos/searchvideos.html',
+    controller: 'searchvideosController',
+    controllerAs: 'searchvideos'
+  })
 }]);
