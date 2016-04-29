@@ -2,13 +2,10 @@ var app = angular.module('main');
 
 app.controller('searchvideosController', searchvideos);
 
-app.$inject = ['$http','$sceDelegateProvider'];
+app.$inject = ['$http','$sceProvider'];
 
-app.config(function($sceDelegateProvider) {
-  $sceDelegateProvider.resourceUrlWhitelist([
-    'self',
-    'https://www.youtube.com/embed/XH7ZRF6zNoc'
-  ])
+app.config(function($sceProvider) {
+  $sceProvider.enabled(false);
 })
 
 function searchvideos($http) {
