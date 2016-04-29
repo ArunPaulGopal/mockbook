@@ -12,4 +12,9 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: 'searchController',
     controllerAs: 'search'
   })
+  .when('/profileview/', {
+    templateUrl: 'profileview/profileview.html',
+    controller: 'profileviewController',
+    controllerAs: 'profileview'
+  })
 }]);
