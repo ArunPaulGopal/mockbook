@@ -135,6 +135,38 @@ app.post('/remove', jsonParser, function(req, res, callback) {
   });
 });
 
+app.post('/mock', jsonParser, function(req, res, callback) {
+  MongoClient.connect(url, function(err, db) {
+    if (!err){
+      var users = db.collection('posts');
+      users.updateOne(
+        {"id":req.body.content},
+        {$set: {'mocked': 'true'}})
+        db.close();
+        res.send("Success");
+    } else {
+      db.close();
+      res.sendStatus(404);
+    }
+  });
+});
+
+app.post('/unmock', jsonParser, function(req, res, callback) {
+  MongoClient.connect(url, function(err, db) {
+    if (!err){
+      var users = db.collection('posts');
+      users.updateOne(
+        {"id":req.body.content},
+        {$set: {'mocked': 'false'}})
+        db.close();
+        res.send("Success");
+    } else {
+      db.close();
+      res.sendStatus(404);
+    }
+  });
+});
+
 app.listen(port,function(){
   console.log("listening on port" + port);
 })

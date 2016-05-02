@@ -19,7 +19,21 @@ function timeline($http) {
     })
   }
 
-  vm.mock = function() {
-    
+  vm.mock = function(id) {
+    var toMock = {};
+    toMock.content = id;
+    var mock = $http.post('http://localhost:8080/mock', toMock);
+    mock.then(function(mocked) {
+      getTimeline();
+    })
+  }
+
+  vm.unmock = function(id) {
+    var toUnmock = {};
+    toUnmock.content = id;
+    var unmock = $http.post('http://localhost:8080/unmock', toUnmock);
+    unmock.then(function(unmocked) {
+      getTimeline();
+    })
   }
 }
