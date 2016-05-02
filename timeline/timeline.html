@@ -15,7 +15,8 @@
               <p>{{post.content}}</p>
             </div>
             <div class="col-md-3">
-              <button class="btn btn-default">Mock</button>
+              <button ng-show="post.mocked === 'false'" class="btn btn-default">Mock</button>
+              <button ng-show="post.mocked === 'true'" class="btn btn-default">Un-Mock</button>
             </div>
           </div>
         </div>

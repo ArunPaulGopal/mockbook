@@ -18,4 +18,8 @@ function timeline($http) {
       vm.list = timeline.data;
     })
   }
+
+  vm.mock = function() {
+    
+  }
 }
