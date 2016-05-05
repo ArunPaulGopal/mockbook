@@ -9,8 +9,16 @@
             <img class="media-object" src="user.jpeg">
         </div>
         <div class="media-body">
-          <h4 class="media-heading">{{post.name}}</h4>
-          <p>{{post.content}}</p>
+          <div class="row">
+            <div ng-class="{red:post.mocked == 'true'}" class="col-md-9">
+              <h4 class="media-heading">{{post.name}}</h4>
+              <p>{{post.content}}</p>
+            </div>
+            <div class="col-md-3">
+              <button ng-show="post.mocked === 'false'" ng-click="timeline.mock(post.id)" class="btn btn-default">Mock</button>
+              <button ng-show="post.mocked === 'true'" ng-click="timeline.unmock(post.id)" class="btn btn-default">Un-Mock</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
