@@ -4,22 +4,12 @@ var MongoClient = require('mongodb').MongoClient
 var url = 'mongodb://localhost:27017/test';
 var jsonParser = require('body-parser').json();
 var port = process.env.PORT || 8080;
-var Flickr = require("flickrapi"),
-    flickrOptions = {
-      api_key: "e3db6f141cc91fc8b844e93484933fd4",
-      secret: "94bf2a5a594b1768"
-    };
-
-Flickr.tokenOnly(flickrOptions, function(error, flickr) {
-})
 
 app.use(express.static('./'));
 app.use(express.static('images'))
 
 app.get('/flickr', function(req, res) {
-  flickr.photos.search({
 
-  })
 });
 
 app.get('/videos', function(req, res, callback) {
