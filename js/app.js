@@ -22,4 +22,9 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: 'searchvideosController',
     controllerAs: 'searchvideos'
   })
+  .when('/searchphotos', {
+    templateUrl: 'searchphotos/searchphotos.html',
+    controller: 'searchphotosController',
+    controllerAs: 'searchphotos'
+  })
 }]);

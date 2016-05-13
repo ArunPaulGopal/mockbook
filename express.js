@@ -3,10 +3,14 @@ var app = express();
 var MongoClient = require('mongodb').MongoClient
 var url = 'mongodb://localhost:27017/test';
 var jsonParser = require('body-parser').json();
-var port = process.env.PORT || 8080
+var port = process.env.PORT || 8080;
 
 app.use(express.static('./'));
 app.use(express.static('images'))
+
+app.get('/flickr', function(req, res) {
+
+});
 
 app.get('/videos', function(req, res, callback) {
   MongoClient.connect(url, function(err, db) {

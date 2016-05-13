@@ -1,0 +1,14 @@
+<div ng-controller="searchphotosController as searchphotos">
+  <div class="panel panel default">
+    <div class="panel-body">
+      <button ng-click="searchphotos.search()" class="btn btn-default">Click to run Flickr</button>
+    </div>
+    <div class="row">
+      <div ng-repeat="photo in searchphotos.results track by $index" class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="{{photo.url_m}}">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
