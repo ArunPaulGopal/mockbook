@@ -4,9 +4,9 @@
       <button ng-click="searchphotos.search()" class="btn btn-default">Click to run Flickr</button>
     </div>
     {{searchphotos.results}}
-    <div ng-repeat="object in searchphotos.results track by $index">
+    <div ng-repeat="object in searchphotos.results.photos track by $index">
       <div ng-repeat="photo in object">
-        {{photo}}
+
       </div>
     </div>
   </div>
