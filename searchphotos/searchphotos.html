@@ -3,10 +3,11 @@
     <div class="panel-body">
       <button ng-click="searchphotos.search()" class="btn btn-default">Click to run Flickr</button>
     </div>
-    {{searchphotos.results}}
-    <div ng-repeat="object in searchphotos.results.photos track by $index">
-      <div ng-repeat="photo in object">
-
+    <div class="row">
+      <div ng-repeat="photo in searchphotos.results track by $index" class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="{{photo.url_m}}">
+        </a>
       </div>
     </div>
   </div>
